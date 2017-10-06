@@ -40,7 +40,7 @@
     if (this.mode === "compact") {
       this.template.commit.message.display = false;
     }
-
+    console.log(template.commit.tag.spacingX);
     // Orientation
     switch (options.orientation) {
       case "vertical-reverse":
@@ -80,6 +80,7 @@
           0 : options.template.branch.labelRotation;
         break;
     }
+    console.log("This template is set", this.template.commit.tag.spacingX);
 
     this.marginX = this.template.branch.spacingX + this.template.commit.dot.size * 2;
     this.marginY = this.template.branch.spacingY + this.template.commit.dot.size * 2;
@@ -1120,7 +1121,9 @@
    * @this Commit
    **/
   Commit.prototype.render = function () {
+    console.log("Pre", this.template.commit.tag.spacingX);
     var commitOffsetForTags = this.template.commit.tag.spacingX;
+    console.log(commitOffsetForTags);
     var commitOffsetLeft = (this.parent.columnMax + 1) * this.template.branch.spacingX + commitOffsetForTags;
 
     // Label
