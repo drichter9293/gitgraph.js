@@ -59,7 +59,7 @@
         this.orientation = "horizontal";
         this.template.branch.labelRotation = _isNullOrUndefined(options, "template.branch.labelRotation") ?
           -90 : options.template.branch.labelRotation;
-        this.template.commit.tag.spacingX = -this.template.commit.spacingX;
+        this.template.commit.tag.spacingX = -this.template.commit.tag.spacingX || -this.template.commit.spacingX;
         this.template.commit.tag.spacingY = this.template.branch.spacingY;
         break;
       case "horizontal-reverse":
