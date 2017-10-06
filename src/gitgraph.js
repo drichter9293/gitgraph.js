@@ -706,6 +706,7 @@
       this.template.commit.tag.color ||
       options.color ||
       null;
+    options.spacingX = this.template.commit.tag.spacingX || null;
     options.dotColor = options.dotColor ||
       this.commitDefaultOptions.dotColor ||
       this.template.commit.dot.color ||
