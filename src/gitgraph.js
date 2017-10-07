@@ -779,8 +779,8 @@
     this.pushPath(point);
 
     // Increment commitOffset for next commit position
-    this.parent.commitOffsetX += this.template.commit.spacingX;
-    this.parent.commitOffsetY += this.template.commit.spacingY;
+    this.parent.commitOffsetX += this.template.commit.spacingX * (options.showLabel ? 2 : 1);
+    this.parent.commitOffsetY += this.template.commit.spacingY * (options.showLabel ? 2 : 1);
 
     // Add height of detail div (vertical mode only)
     if (commit.detail !== null && _isVertical(this.parent)) {
@@ -1247,7 +1247,7 @@
     var isForkCommit = (this === this.branch.commits[0]);
     if (this.type === "mergeCommit" || isForkCommit) {
       var deltaColumn = (this.parentCommit.branch.column - this.branch.column);
-      var commitSpaceDelta = (this.showLabel ? 2 : 1);
+      var commitSpaceDelta = 1; //(this.showLabel ? 2 : 1);
 
       var alphaX = this.template.branch.spacingX * deltaColumn + this.template.commit.spacingX * commitSpaceDelta;
       var isPushedInY = (isForkCommit || isReversed) &&
