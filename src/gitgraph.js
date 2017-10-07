@@ -779,8 +779,8 @@
     this.pushPath(point);
 
     // Increment commitOffset for next commit position
-    //this.parent.commitOffsetX += this.template.commit.spacingX * (options.showLabel ? 2 : 1);
-    //this.parent.commitOffsetY += this.template.commit.spacingY * (options.showLabel ? 2 : 1);
+    this.parent.commitOffsetX += this.template.commit.spacingX;
+    this.parent.commitOffsetY += this.template.commit.spacingY;
 
     // Add height of detail div (vertical mode only)
     if (commit.detail !== null && _isVertical(this.parent)) {
