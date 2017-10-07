@@ -740,10 +740,10 @@
     var isPathBeginning = this.path.length === 0;
 
     options.showLabel = (isPathBeginning && this.showLabel);
-    // if (options.showLabel) {
-    //   options.x -= this.template.commit.spacingX;
-    //   options.y -= this.template.commit.spacingY;
-    // }
+    if (options.showLabel) {
+      options.x -= this.template.commit.spacingX;
+      options.y -= this.template.commit.spacingY;
+    }
 
     var commit = new Commit(options);
     this.commits.push(commit);
@@ -779,8 +779,8 @@
     this.pushPath(point);
 
     // Increment commitOffset for next commit position
-    this.parent.commitOffsetX += this.template.commit.spacingX * (options.showLabel ? 2 : 1);
-    this.parent.commitOffsetY += this.template.commit.spacingY * (options.showLabel ? 2 : 1);
+    //this.parent.commitOffsetX += this.template.commit.spacingX * (options.showLabel ? 2 : 1);
+    //this.parent.commitOffsetY += this.template.commit.spacingY * (options.showLabel ? 2 : 1);
 
     // Add height of detail div (vertical mode only)
     if (commit.detail !== null && _isVertical(this.parent)) {
